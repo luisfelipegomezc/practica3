@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText eExpo, ePrac, eProy, eNotaF;
     Button bCalcular;
+    int error=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +27,33 @@ public class MainActivity extends AppCompatActivity {
         eNotaF = (EditText) findViewById(R.id.eNotaFial);
         bCalcular = (Button) findViewById(R.id.bCalc);
 
+
+
         bCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 double notaF;
-                notaF = Double.parseDouble(eExpo.getText().toString())*15/100 + Double.parseDouble(ePrac.getText().toString())*50/100 +
-                        Double.parseDouble(eProy.getText().toString())*35/100;
-                eNotaF.setText(String.valueOf(notaF));
+                if(Double.parseDouble(eExpo.getText().toString()) > 5){
+                    eNotaF.setText("error");
+                    error=1;
+                } else {
+                    notaF = Double.parseDouble(eExpo.getText().toString()) * 15 / 100 + Double.parseDouble(ePrac.getText().toString()) * 50 / 100 +
+                            Double.parseDouble(eProy.getText().toString()) * 35 / 100;
+                    eNotaF.setText(String.valueOf(notaF));
+
+                }
+                if(error==1){
+                    Toast toast=Toast.makeText(getApplicationContext(), "fallo un dato", Toast.LENGTH_LONG);
+                    toast.show();
+                    error=0;
+                }
             }
+
         });
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
