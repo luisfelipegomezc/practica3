@@ -62,4 +62,14 @@
         android:layout_height="wrap_content"
         android:text="@string/guardar"
         android:id="@+id/bGuardar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/borrar"
+            android:id="@+id/bBorrar"
+            android:gravity="left"/>
+    </LinearLayout>
 </LinearLayout>

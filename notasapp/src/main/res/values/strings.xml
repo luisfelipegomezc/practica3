@@ -8,4 +8,6 @@
     <string name="porcentaje">Porcentajes(%)</string>
     <string name="guardar">Guardar</string>
     <string name="configuracion">Configuración</string>
+    <string name="valorPorcentajes">Valor de Porcentajes</string>
+    <string name="borrar">Borrar Datos</string>
 </resources>
